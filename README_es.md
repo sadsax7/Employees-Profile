@@ -208,9 +208,7 @@ Todo lo demás funciona conforme al alcance solicitado.
 - **¿Necesito saber programar?** No. Solo debes seguir las instrucciones tal como están. Si algo falla, copia el error y busca "FastAPI" + el mensaje en Google.
 - **¿Puedo cambiar los datos del empleado?** Sí. Edita `init_db()` en `backend/app/main.py`, borra `backend/employees.db` y vuelve a ejecutar el backend para que se regenere con los nuevos datos.
 - **¿Cómo cierro todo?** Pulsa `Ctrl + C` en cada terminal (backend y frontend). Luego desactiva el entorno virtual con `deactivate`.
-- **¿Puedo usar otro puerto?** Sí, cambia `--port` en Uvicorn y adapta `VITE_API_BASE_URL` (en tu archivo `.env`) para que apunte al nuevo puerto del backend.
 - **¿Puedo borrar la base y que se regenere?** Sí. Siempre que `init_db()` tenga los datos que quieres, bastará con borrar `backend/employees.db` (o el volumen en Docker) antes de encender el backend; FastAPI detecta que está vacía y la vuelve a poblar.
-- **¿Cómo apunto el frontend a otra URL del backend?** Copia `frontend/.env.example` a `frontend/.env` y reemplaza `VITE_API_BASE_URL` con la URL que corresponda. El proyecto lee ese valor automáticamente en tiempo de compilación.
 - **¿Y Docker?** Usa las instrucciones del siguiente apartado; todo ya está dockerizado.
 
 ---
@@ -236,7 +234,6 @@ Todo lo demás funciona conforme al alcance solicitado.
 > El archivo Compose compila el frontend con `VITE_API_BASE_URL=http://localhost:8000` para que tu navegador (que corre en el host) llegue al backend. Si corres los contenedores en otro servidor, cambia ese argumento en `docker-compose.yml` para apuntar a la URL pública del backend.
 
 ### Personalizaciones rápidas con Docker
-- **Cambiar el API base del frontend**: edita `frontend/.env.example` antes de correr `docker compose up`, o pasa un parámetro de build distinto `docker compose build --build-arg VITE_API_BASE_URL=http://... frontend`.
 - **Datos distintos en la DB**: modifica `init_db()` y reconstruye la imagen del backend (`docker compose build backend`) para que la próxima ejecución arranque con tu información dummy.
 
 ---
