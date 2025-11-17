@@ -23,8 +23,8 @@ This repository meets all of those requirements: you get the login, the profile 
 | Database with ≥1 person and ≥5 skills | ✅ SQLite db, SQLAlchemy models | `backend/employees.db` and `backend/app/models.py`
 | Backend that exposes the data | ✅ FastAPI endpoints | `backend/app/main.py`
 | 404 page | ✅ Not found page | `frontend/src/pages/NotFoundPage.jsx`
-| Clear documentation | ✅ This README + `backend/README.md` + `frontend/README.md` + `README_es.md`
-| Dockerized solution | ✅ `docker-compose.yml` + Dockerfiles for backend and frontend
+| Clear documentation | ✅ This README and --> | `backend/README.md` + `frontend/README.md` + `README_es.md`
+| Dockerized solution | ✅ `docker-compose.yml` + Dockerfiles for backend and frontend | `./docker-compose.yml`
 
 ---
 
