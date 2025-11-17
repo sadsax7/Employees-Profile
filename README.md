@@ -19,10 +19,10 @@ This repository meets all of those requirements: you get the login, the profile 
 | --- | --- | --- |
 | Basic login that redirects to the profile | ✅ | `frontend/src/pages/LoginPage.jsx`
 | Profile page with name, role, and avatar | ✅ | `frontend/src/pages/ProfilePage.jsx`
-| Spider/radar chart showing skills | ✅ RadarChart built with Recharts inside `ProfilePage.jsx`
-| Database with ≥1 person and ≥5 skills | ✅ SQLite `backend/employees.db`, SQLAlchemy models in `backend/app/models.py`
-| Backend that exposes the data | ✅ FastAPI endpoints in `backend/app/main.py`
-| 404 page | ✅ `frontend/src/pages/NotFoundPage.jsx`
+| Spider/radar chart showing skills | ✅ RadarChart built with Recharts | `ProfilePage.jsx` 
+| Database with ≥1 person and ≥5 skills | ✅ SQLite db, SQLAlchemy models | `backend/employees.db` and `backend/app/models.py`
+| Backend that exposes the data | ✅ FastAPI endpoints | `backend/app/main.py`
+| 404 page | ✅ Not found page | `frontend/src/pages/NotFoundPage.jsx`
 | Clear documentation | ✅ This README + `backend/README.md` + `frontend/README.md` + `README_es.md`
 | Dockerized solution | ✅ `docker-compose.yml` + Dockerfiles for backend and frontend
 
