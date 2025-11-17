@@ -202,9 +202,7 @@ Everything else matches the challenge scope.
 - **Do I need to know how to code?** Nope. Follow the instructions; if something fails, copy the exact error and search “FastAPI” + that message.
 - **Can I change the dummy profile?** Yes. Edit `init_db()` in `backend/app/main.py`, delete `backend/employees.db`, and restart the backend.
 - **How do I stop everything?** Press `Ctrl + C` in both terminals, then deactivate the virtual environment with `deactivate`.
-- **Can I change the backend port?** Sure. Adjust the `--port` parameter when running Uvicorn *and* update `VITE_API_BASE_URL` (your `.env` file) so the frontend knows the new URL.
 - **Can I delete the database and let it regenerate?** Yes. As long as `init_db()` contains the data you want, removing `backend/employees.db` (or the Docker volume) before starting the backend will recreate it automatically.
-- **How do I point the frontend somewhere else?** Copy `.env.example` to `.env` and edit `VITE_API_BASE_URL`. Vite injects that value at build time.
 - **What about Docker?** See the next section—everything is already containerized.
 
 ---
@@ -230,7 +228,6 @@ Everything else matches the challenge scope.
 > The Compose file builds the frontend with `VITE_API_BASE_URL=http://localhost:8000` so your browser (running on the host) can reach the API. If you run these containers on a remote server, change that build arg in `docker-compose.yml` to match the public URL of your backend.
 
 ### Quick Docker tweaks
-- **Different backend URL for the frontend** – edit `frontend/.env.example` before running compose, or rebuild with `docker compose build --build-arg VITE_API_BASE_URL=http://... frontend`.
 - **Different seed data** – edit `init_db()`, then `docker compose build backend` so the new data ships inside the backend image.
 
 ---
